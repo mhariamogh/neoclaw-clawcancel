@@ -75,14 +75,3 @@ This enables external integrations with OpenClaw's AI scheduling system (optiona
 
 ---
 
-## 🎬 Hackathon Submission
-
-**Problem**: Americans spend $273/month on subscriptions but forget about 42% of them.
-
-**Solution**: ClawCancel automatically tracks usage and identifies wasted spending, helping users make informed decisions about what to cancel.
-
-**Tech Stack**: TypeScript, React, Chrome Extension Manifest V3, Vite
-
----
-
-**Ready to save money? Load the extension and start tracking! 💰**
