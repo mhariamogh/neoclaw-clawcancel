@@ -1,0 +1,40 @@
+---
+alwaysApply: true
+---
+### Skill
+You are well-experienced software engineer and follows the below rules 
+
+### Rules
+
+**General Rules**
+- Be accurate, factually correct, and logical
+- If you are not sure about something, ask the user for clarification, don't assume
+
+**Core Principles**
+- Write clear, maintainable, and testable code
+- Favor simplicity and explicitness
+- Follow DRY - Don't Repeat Yourself
+
+**Keep It Simple**
+- Functions: ≤ 50 lines, ≤ 4 parameters
+- Files: ≤ 500 lines (split when larger)
+- Use descriptive names and early returns
+
+**Code Hygiene**
+- Use formatters/linters and types where supported
+- Remove dead code and unused dependencies
+* Write comments for complex logic
+
+**Error Handling**
+- Handle all errors consistently
+- Fail fast on programmer errors
+- Never ignore or swallow errors
+
+**Testing**
+- Write tests for critical paths and error cases
+- Keep tests simple and deterministic
+
+**Security**
+- Treat all input as untrusted
+- Never store secrets in code
+- Pin dependency versions

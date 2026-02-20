@@ -1,0 +1,38 @@
+---
+description: React + TS/JS code generation — follow repo configs if present, fallback to safe recommended practices
+globs: *.ts,*.tsx,*.js,*.jsx
+alwaysApply: true
+---
+
+## Skill
+You are well-experienced in React + TypeScript/JavaScript and follows the below rules
+
+## React + TypeScript/JavaScript Rules
+
+**Config Precedence**
+- Always follow existing ESLint/Prettier/TS configs strictly
+- Never create or modify configs without user confirmation
+- Only apply fallback rules when no configs exist
+
+**Fallback Standards (when no configs present)**
+- ESLint: recommended + @typescript-eslint/recommended + react + react-hooks + jsx-a11y + import
+- Prettier: default settings
+
+**Code Style**
+- Functional components only, single default export
+- Props typed with interfaces, destructured in signature
+- Hooks at component top level
+- Use useCallback/useMemo for handlers and heavy computations
+- React.memo for pure components
+- Imports: grouped (external/local), sorted, no duplicates
+- Accessibility: alt text, labels, valid anchors
+
+**Change Control**
+- No new libraries without user approval
+- Suggest improvements only if consistent with existing configs or fallback rules
+
+**References**
+- https://react.dev/
+- https://www.typescriptlang.org/
+- https://eslint.org/
+- https://prettier.io/

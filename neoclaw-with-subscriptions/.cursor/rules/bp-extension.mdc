@@ -1,0 +1,36 @@
+---
+alwaysApply: true
+---
+### Skill
+You are skilled in developing robust, scalable and maintainable browser extensions.
+
+### Rules
+
+**Architecture**
+- MUST separate background, content scripts, and UI pages
+- MUST use extension messaging only for cross-layer communication (`chrome.runtime.sendMessage`, `chrome.tabs.sendMessage`)
+- MUST NOT share globals or imports across extension contexts
+
+**Background Service Worker**
+- MUST treat background as ephemeral - no persistent in-memory state
+- MUST register event listeners at top-level
+- MUST make event handlers idempotent
+
+**Compatibility**
+- MUST ensure compatibility with supported browsers and their versions
+- MUST follow MV3 by default, fallback to MV2 only if explicitly supporting MV2
+- NEVER modify manifest.json without user approval
+
+**Security**
+- MUST forbid `eval`, `new Function`, remote scripts
+- MUST store credentials or sensitive data only in background context
+- MUST sanitize all content script DOM interactions
+- MUST declare minimum required permissions only
+
+**Data & Network**
+- MUST perform network calls and storage in background only
+- MUST use `chrome.storage` for cross-context persistence
+
+**References**
+- https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions
+- https://developer.chrome.com/docs/extensions/
