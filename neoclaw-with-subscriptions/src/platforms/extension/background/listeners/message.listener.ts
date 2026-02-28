@@ -2,17 +2,16 @@ import type {
   GetSettingsUseCase,
   UpdateSettingsUseCase,
   ResetSettingsUseCase,
-  IAuthRepository,
+  ISubscriptionRepository,
 } from '@/core';
 import { MessageType } from '../../types';
 import type { ExtensionMessage, ExtensionResponse } from '../../types';
-import { AuthError } from '../providers/auth-repository.provider';
 
 interface MessageListenerDeps {
   getSettingsUseCase: GetSettingsUseCase;
   updateSettingsUseCase: UpdateSettingsUseCase;
   resetSettingsUseCase: ResetSettingsUseCase;
-  authRepository: IAuthRepository;
+  subscriptionRepository: ISubscriptionRepository;
 }
 
 export class MessageListener {
@@ -35,7 +34,6 @@ export class MessageListener {
             sendResponse({
               success: false,
               error: error instanceof Error ? error.message : 'Unknown error',
-              errorKind: error instanceof AuthError ? error.kind : 'error',
             });
           });
 
@@ -62,19 +60,9 @@ export class MessageListener {
         return { success: true, data: reset };
       }
 
-      case MessageType.GET_AUTH_STATE: {
-        const authState = await this.deps.authRepository.getAuthState();
-        return { success: true, data: authState };
-      }
-
-      case MessageType.LOGIN: {
-        const authState = await this.deps.authRepository.login(message.username, message.password);
-        return { success: true, data: authState };
-      }
-
-      case MessageType.LOGOUT: {
-        const authState = await this.deps.authRepository.logout();
-        return { success: true, data: authState };
+      case MessageType.GET_SUBSCRIPTION_REPORT: {
+        const report = await this.deps.subscriptionRepository.getReport();
+        return { success: true, data: report };
       }
 
       default:

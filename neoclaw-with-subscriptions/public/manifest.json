@@ -4,8 +4,7 @@
   "version": "1.0.0",
   "description": "AI-powered subscription manager with chat interface",
   "permissions": ["storage", "tabs", "history", "alarms", "notifications"],
-  "host_permissions": ["https://api.openai.com/*"],
-  "background": {
+"background": {
     "service_worker": "src/platforms/extension/background/index.ts",
     "type": "module"
   },
@@ -26,6 +25,7 @@
       "48": "icons/neo-claw.png",
       "128": "icons/neo-claw.png"
     },
-    "default_title": "ClawCancel"
+    "default_title": "ClawCancel",
+    "default_popup": "src/platforms/extension/tab/index.html"
   }
 }

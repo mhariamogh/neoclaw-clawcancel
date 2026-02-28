@@ -6,7 +6,7 @@ import {
   SubscriptionService
 } from '@/core/entities';
 
-const USAGE_THRESHOLD_MINUTES = 20; // For hackathon demo - should be 30 days (43200 minutes) in production
+const USAGE_THRESHOLD_MINUTES = 43200; // 30 days in minutes
 
 export class SubscriptionRepository implements ISubscriptionRepository {
   private readonly USAGE_KEY = 'subscription_usage';
@@ -28,14 +28,11 @@ export class SubscriptionRepository implements ISubscriptionRepository {
       const serviceUsage = usage[service.id];
       
       if (!serviceUsage || !serviceUsage.lastVisit) {
-        // Never visited = unused
-        unusedCount++;
-        wastedCost += service.cost;
-        // Create usage entry if it doesn't exist
+        // Never visited — skip from cost/waste calculations entirely
         if (!usage[service.id]) {
           usage[service.id] = this.createDefaultUsage(service.id);
-          usage[service.id].status = 'unused';
         }
+        totalCost -= service.cost; // undo the addition above; not confirmed as theirs
       } else {
         // Calculate minutes unused
         const minutesUnused = Math.floor((now - serviceUsage.lastVisit) / (1000 * 60));
