@@ -1,7 +1,7 @@
-# ClawCancel - Subscription Tracker
-
-# This was vibe coded during a hackathon and cleaned up for everyday use.Read more here!
+# This was vibe coded during a hackathon and cleaned up for everyday use.Read more here
 https://www.hariamogh.com/blog/neoclaw-hackathon
+
+# ClawCancel - Subscription Tracker
 
 **Automatically track your streaming subscriptions and identify what you're wasting money on.**
 
