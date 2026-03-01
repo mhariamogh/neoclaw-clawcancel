@@ -1,5 +1,8 @@
 # ClawCancel - Subscription Tracker
 
+# This was vibe coded during a hackathon and cleaned up for everyday use.Read more here!
+https://www.hariamogh.com/blog/neoclaw-hackathon
+
 **Automatically track your streaming subscriptions and identify what you're wasting money on.**
 
 ClawCancel is a Chrome extension that monitors your browsing history and shows you which subscriptions you're actively using and which ones are draining your wallet — right from a clean popup when you click the extension icon.
