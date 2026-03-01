@@ -21,8 +21,8 @@ All data is stored locally in Chrome. Nothing leaves your browser.
 **Prerequisites:** Node.js 18+, Google Chrome
 
 ```bash
-git clone https://github.com/mhariamogh/neoclaw-hackathon-yosemite.git
-cd neoclaw-hackathon-yosemite/neoclaw-with-subscriptions
+git clone https://github.com/mhariamogh/neoclaw-clawcancel.git
+cd neoclaw-clawcancel/neoclaw-with-subscriptions
 npm install
 npm run build
 ```
