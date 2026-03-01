@@ -2,44 +2,62 @@
 Read more here - https://www.hariamogh.com/blog/neoclaw-hackathon
 
 
-# ClawCancel - Subscription Tracker
+# ClawCancel
 
-**Automatically track your streaming subscriptions and identify what you're wasting money on.**
+**Stop paying for subscriptions you don't use.**
 
-ClawCancel is a Chrome extension that monitors your browsing history and shows you which subscriptions you're actively using and which ones are draining your wallet — right from a clean popup when you click the extension icon.
+ClawCancel is a Chrome extension that tracks which streaming and subscription services you actually visit, then tells you exactly what you're wasting money on — right from a popup when you click the extension icon.
 
 ---
 
-## Quick Start
+## How It Works
+
+1. **On install** — ClawCancel immediately backfills from your last 30 days of Chrome browsing history, so you get useful data right away without waiting.
+2. **As you browse** — every visit to a tracked service is recorded in real time.
+3. **Every 30 days** — the extension generates a fresh report. If you have unused subscriptions, a Chrome notification fires with the total wasted amount.
+4. **Click the icon** — a popup shows your current usage, what you're paying, and what you're not using.
+
+All data is stored locally in Chrome. Nothing leaves your browser.
+
+---
+
+## Installation
+
+**Prerequisites:** Node.js 18+, Google Chrome
 
 ```bash
-cd neoclaw-with-subscriptions
+git clone https://github.com/mhariamogh/neoclaw-hackathon-yosemite.git
+cd neoclaw-hackathon-yosemite/neoclaw-with-subscriptions
 npm install
 npm run build
 ```
 
-Then load the `dist/` folder as an unpacked extension in Chrome (`chrome://extensions` → Developer mode → Load unpacked).
+Then load the extension:
 
-Click the extension icon — a popup opens showing your subscription usage.
+1. Open `chrome://extensions`
+2. Enable **Developer mode** (top right toggle)
+3. Click **Load unpacked**
+4. Select the `dist/` folder inside `neoclaw-with-subscriptions/`
 
----
-
-## What It Shows
-
-- **Monthly total** — combined cost of all tracked subscriptions
-- **Wasted** — money spent on services you haven't used
-- **Using** — active subscriptions with time since last visit
-- **Not using** — unused subscriptions with their monthly cost highlighted in red
-- **Savings nudge** — how much you'd save per month and per year by cancelling unused services
+Click the ClawCancel icon in your toolbar — the popup opens immediately.
 
 ---
 
-## Key Features
+## What the Popup Shows
 
-- **Automatic tracking** — monitors 10 popular services: Netflix, Spotify, Hulu, Disney+, YouTube Premium, HBO Max, Prime Video, Apple TV+, Paramount+, ESPN+
-- **Popup UI** — opens inline when you click the extension icon, no new tab
-- **Real-time refresh** — manual refresh button + auto-updates when the background generates a new report
-- **Privacy-first** — all data stored locally in Chrome storage, nothing leaves your browser
+| Section | Description |
+|---|---|
+| **Monthly** | Combined cost of all tracked subscriptions |
+| **Wasted** | Money spent on services you haven't visited in 30 days |
+| **Using** | Active subscriptions with time since your last visit |
+| **Not using** | Unused subscriptions with cost in red |
+| **Savings nudge** | How much you'd save per month and per year by cancelling unused services |
+
+---
+
+## Notifications
+
+After each 30-day cycle, if you have unused subscriptions ClawCancel sends a Chrome notification showing the count and wasted amount. Clicking the notification opens the popup.
 
 ---
 
@@ -49,6 +67,39 @@ Netflix · Spotify · Hulu · Disney+ · YouTube Premium · HBO Max · Amazon Pr
 
 ---
 
-## Repository
+## Development
 
-- `neoclaw-with-subscriptions/` — Extension source (React + TypeScript + Vite)
+```bash
+# Install dependencies
+npm install
+
+# Build for production (outputs to dist/)
+npm run build
+
+# Lint
+npm run lint
+```
+
+After any code change, rebuild and click the refresh icon on `chrome://extensions` to reload the extension.
+
+**Tech stack:** React · TypeScript · Vite · styled-components · crxjs · Chrome Extensions Manifest V3
+
+---
+
+## Project Structure
+
+```
+neoclaw-with-subscriptions/
+├── src/
+│   ├── core/                         # Entities, interfaces, use cases
+│   ├── features/
+│   │   ├── components/               # Shared UI components + global styles
+│   │   ├── hooks/                    # useSubscriptionReport
+│   │   └── theme/                    # Light theme tokens
+│   └── platforms/extension/
+│       ├── background/               # Service worker: tracking, alarms, notifications
+│       ├── content/                  # Content script (minimal)
+│       └── tab/                      # Popup UI (TabPage)
+└── public/
+    └── manifest.json                 # Chrome extension manifest (MV3)
+```
