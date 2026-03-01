@@ -7,6 +7,9 @@ Read more here - https://www.hariamogh.com/blog/neoclaw-hackathon
 
 ClawCancel is a Chrome extension that tracks which streaming and subscription services you actually visit, then tells you exactly what you're wasting money on — right from a popup when you click the extension icon.
 
+<img width="404" height="438" alt="Screenshot 2026-02-28 at 5 16 56 PM" src="https://github.com/user-attachments/assets/006b0238-3407-48d9-8bc2-e8b8c812c010" />
+
+
 ## How It Works
 
 1. **On install** — ClawCancel immediately backfills from your last 30 days of Chrome browsing history, so you get useful data right away without waiting.
