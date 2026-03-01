@@ -1,14 +1,11 @@
 ## Vibe coded for a hackathon and cleaned up for everyday use.
 Read more here - https://www.hariamogh.com/blog/neoclaw-hackathon
 
-
 # ClawCancel
 
 **Stop paying for subscriptions you don't use.**
 
 ClawCancel is a Chrome extension that tracks which streaming and subscription services you actually visit, then tells you exactly what you're wasting money on — right from a popup when you click the extension icon.
-
----
 
 ## How It Works
 
@@ -18,8 +15,6 @@ ClawCancel is a Chrome extension that tracks which streaming and subscription se
 4. **Click the icon** — a popup shows your current usage, what you're paying, and what you're not using.
 
 All data is stored locally in Chrome. Nothing leaves your browser.
-
----
 
 ## Installation
 
@@ -41,8 +36,6 @@ Then load the extension:
 
 Click the ClawCancel icon in your toolbar — the popup opens immediately.
 
----
-
 ## What the Popup Shows
 
 | Section | Description |
@@ -53,16 +46,6 @@ Click the ClawCancel icon in your toolbar — the popup opens immediately.
 | **Not using** | Unused subscriptions with cost in red |
 | **Savings nudge** | How much you'd save per month and per year by cancelling unused services |
 
----
-
 ## Notifications
 
 After each 30-day cycle, if you have unused subscriptions ClawCancel sends a Chrome notification showing the count and wasted amount. Clicking the notification opens the popup.
-
----
-
-## Tracked Services
-
-Netflix · Spotify · Hulu · Disney+ · YouTube Premium · HBO Max · Amazon Prime Video · Apple TV+ · Paramount+ · ESPN+
-
----
