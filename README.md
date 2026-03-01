@@ -1,5 +1,5 @@
-# This was vibe coded during a hackathon and cleaned up for everyday use.Read more here
-https://www.hariamogh.com/blog/neoclaw-hackathon
+# This was vibe coded during a hackathon and cleaned up for everyday use. Read more here - https://www.hariamogh.com/blog/neoclaw-hackathon
+
 
 # ClawCancel - Subscription Tracker
 
