@@ -2,76 +2,49 @@
 
 **Automatically track your streaming subscriptions and identify what you're wasting money on.**
 
-ClawCancel is a Chrome extension that monitors your browsing history and generates reports showing which subscriptions you're actually using and which ones are draining your wallet.
+ClawCancel is a Chrome extension that monitors your browsing history and shows you which subscriptions you're actively using and which ones are draining your wallet — right from a clean popup when you click the extension icon.
 
 ---
 
-## 🚀 Quick Start
-
-### Option 1: Load Pre-built Extension (Fastest)
-
-1. Download `clawcancel-realtime-fixed.tar.gz`
-2. Extract it: `tar -xzf clawcancel-realtime-fixed.tar.gz`
-3. Load the `dist` folder in Chrome as an unpacked extension
-
-### Option 2: Build from Source
+## Quick Start
 
 ```bash
 cd neoclaw-with-subscriptions
 npm install
 npm run build
-# Load the generated dist/ folder in Chrome
 ```
 
----
+Then load the `dist/` folder as an unpacked extension in Chrome (`chrome://extensions` → Developer mode → Load unpacked).
 
-## 📖 Full Documentation
-
-See **[neoclaw-with-subscriptions/HACKATHON_SETUP.md](./neoclaw-with-subscriptions/HACKATHON_SETUP.md)** for:
-- Detailed setup instructions
-- Testing scenarios
-- Browser Relay integration
-- Troubleshooting
+Click the extension icon — a popup opens showing your subscription usage.
 
 ---
 
-## ✨ Key Features
+## What It Shows
 
-- **Automatic Tracking**: Monitors 10 popular streaming services (Netflix, Spotify, Hulu, etc.)
-- **Usage Analysis**: Reports generated every 20 minutes showing active vs. unused subscriptions
-- **Immediate Reports**: Get your first report instantly on install
-- **AI Chat Interface**: Ask questions and get recommendations on what to cancel
-- **Privacy-First**: All data stored locally in Chrome
-
----
-
-## 🎯 Demo Features
-
-- **20-minute usage threshold** (instead of 30 days) for easy testing
-- **Manual trigger**: Run `chrome.alarms.onAlarm.dispatch({ name: 'subscription-check' })` in Service Worker console
-- **Pre-configured services**: Netflix, Spotify, Hulu, Disney+, YouTube Premium, HBO Max, Prime Video, Apple TV+, Paramount+, ESPN+
+- **Monthly total** — combined cost of all tracked subscriptions
+- **Wasted** — money spent on services you haven't used
+- **Using** — active subscriptions with time since last visit
+- **Not using** — unused subscriptions with their monthly cost highlighted in red
+- **Savings nudge** — how much you'd save per month and per year by cancelling unused services
 
 ---
 
-## 🔧 Optional: WebSocket Relay Server
+## Key Features
 
-Run the relay server for advanced integrations:
-
-```bash
-node extension-relay-server.js
-# Extension auto-connects to ws://localhost:18795
-```
-
-This enables external integrations with OpenClaw's AI scheduling system (optional for demo).
+- **Automatic tracking** — monitors 10 popular services: Netflix, Spotify, Hulu, Disney+, YouTube Premium, HBO Max, Prime Video, Apple TV+, Paramount+, ESPN+
+- **Popup UI** — opens inline when you click the extension icon, no new tab
+- **Real-time refresh** — manual refresh button + auto-updates when the background generates a new report
+- **Privacy-first** — all data stored locally in Chrome storage, nothing leaves your browser
 
 ---
 
-## 📦 Repository Contents
+## Tracked Services
 
-- `neoclaw-with-subscriptions/` - Extension source code
-- `clawcancel-realtime-fixed.tar.gz` - Pre-built extension (ready to load)
-- `extension-relay-server.js` - Optional WebSocket relay server
-- `neoclaw-with-subscriptions/HACKATHON_SETUP.md` - Full setup guide
+Netflix · Spotify · Hulu · Disney+ · YouTube Premium · HBO Max · Amazon Prime Video · Apple TV+ · Paramount+ · ESPN+
 
 ---
 
+## Repository
+
+- `neoclaw-with-subscriptions/` — Extension source (React + TypeScript + Vite)
