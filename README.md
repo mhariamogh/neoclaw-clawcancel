@@ -39,16 +39,6 @@ Then load the extension:
 
 Click the ClawCancel icon in your toolbar — the popup opens immediately.
 
-## What the Popup Shows
-
-| Section | Description |
-|---|---|
-| **Monthly** | Combined cost of all tracked subscriptions |
-| **Wasted** | Money spent on services you haven't visited in 30 days |
-| **Using** | Active subscriptions with time since your last visit |
-| **Not using** | Unused subscriptions with cost in red |
-| **Savings nudge** | How much you'd save per month and per year by cancelling unused services |
-
 ## Notifications
 
 After each 30-day cycle, if you have unused subscriptions ClawCancel sends a Chrome notification showing the count and wasted amount. Clicking the notification opens the popup.
